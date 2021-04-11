@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/my.css">
+    <title>search</title>
+</head>
+
+<body>
+    <div class="container" id="app">
+        <div class="engine-box">
+            <div v-bind:class="isActive==index?'engine-on':'engine-off'" @click="swapEngine(index)"
+                v-for="(item,index) of searchEngine">{{item.name}}</div>
+        </div>
+        <div class="search-box">
+            <input type="text" class="search-input" v-model="searchStr" @keyup.enter="search">
+            <div class="search-btn" @click="search"><img src="./img/search.png" alt=""></div>
+        </div>
+        <div class="sug-box">
+            <div v-for="sug in sugArray" @click="sugIn">{{sug}}</div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script src="./js/my.js"></script>
+</body>
+
+</html>
