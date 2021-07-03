@@ -3,8 +3,7 @@ html{
 }
 body{
     margin: 0 0;
-    padding: 0 0;
-    /*background: url("https://api.berryapi.net/?service=App.Bing.Images&day=0") no-repeat center center fixed;*/              
+    padding: 0 0;         
     background-size: cover;
     height: 100%;
     overflow: hidden;

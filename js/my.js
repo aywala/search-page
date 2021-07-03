@@ -64,5 +64,5 @@ function baiduSug(str) {
 document.getElementsByTagName("input")[0].focus()
 
 //background image
-let rdm=Math.floor(Math.random()*26);
-document.getElementsByTagName("body")[0].style.background=`url('./img/backgrounds/image_${rdm}.jpg') no-repeat center center fixed`;
+let rdm=Math.floor(Math.random()*29);
+document.getElementsByTagName("body")[0].style.backgroundImage=`url('./img/backgrounds/image_${rdm}.jpg')`;
