@@ -40,6 +40,11 @@ let vm = new Vue({
         },
         search: function () {
             let url = this.searchEngine[this.isActive].url + this.encodedStr
+            let searcHistory = JSON.parse(localStorage.getItem("searcHistory")) || []
+            searcHistory.unshift(this.searchStr)
+            if (searcHistory.length > 8)
+                searcHistory.pop()
+            localStorage.setItem("searcHistory",JSON.stringify(searcHistory))
             window.open(url)
         },
         sugIn: function (event) {
@@ -59,7 +64,7 @@ function baiduSug(str) {
         sug.src = `https://suggestion.baidu.com/su?wd=${str}&cb=window.baidu.sug`
         document.getElementsByTagName('body')[0].appendChild(sug)
     }
-    else vm.sugArray = []
+    else vm.sugArray = JSON.parse(localStorage.getItem("searcHistory")) || []
 }
 document.getElementsByTagName("input")[0].focus()
 
